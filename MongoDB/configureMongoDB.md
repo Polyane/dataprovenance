@@ -190,4 +190,18 @@ rs0:PRIMARY> rs.status()
         "ok" : 1
 }
 ```
+
+Create a database provenance and a user to insert data provenance:
+
+```
+use provenance
+
+db.createUser(
+   {
+     user: "provbio",
+     pwd: "userpassword",
+     roles: [ "readWrite", "dbAdmin" ]
+   }
+)
+```
 Source: https://www.mundodocker.com.br/cluster-mongo-em-docker/
