@@ -2,7 +2,7 @@
 
 To create the cassandra cluster we will use two machines. The cassandra cluster uses the ring architecture.
 
-![Cassandra Cluster](https://github.com/Polyane/dataprovenance/blob/master/Cassandra/cassandraCluster.PNG)
+![Cassandra Cluster](https://github.com/Polyane/dataprovenance/blob/master/Cassandra/cassandraCluster.png)
 
 Create the directory on the host where the database data will be persisted:
 
