@@ -1,6 +1,9 @@
-# Configure MongoDB Primary Node
+# Configure MongoDB Cluster with Docker
 
 For create the mongodb cluster we will use three machines, one machine for the primary node and two for secundary nodes.
+
+![MongoDB Cluster](https://github.com/Polyane/dataprovenance/blob/master/MongoDB/mongoCluster.PNG)
+
 Create the directory on the host where the database data will be persisted:
 
 ```
