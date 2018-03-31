@@ -4,6 +4,8 @@ For create the mongodb cluster we will use three machines, one machine for the p
 
 ![MongoDB Cluster](https://github.com/Polyane/dataprovenance/blob/master/MongoDB/mongoCluster.PNG)
 
+Before configuring the mongodb cluster you must install docker on all machines: [README.md](https://github.com/Polyane/dataprovenance/blob/master/README.md)
+
 Create the directory on the host where the database data will be persisted:
 
 ```
