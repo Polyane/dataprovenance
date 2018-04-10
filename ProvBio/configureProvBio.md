@@ -4,7 +4,6 @@
 
 ```
 $ docker run --name provbio -v /opt/provbio:/opt/provbio -itd -p 2424:24242 -p 2480:2480 -p 27017:27017 -p 7000:7000 polyane/provbio
-$ docker exec provbio bash
 $ docker exec -it provbio bash
 ```
 
