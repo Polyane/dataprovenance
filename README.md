@@ -34,3 +34,36 @@ $ vi /etc/hosts
 <ip machine 3> node3.db
 <ip machine 4> provbio.biolinux
 ```
+
+# To enable communication between hosts of different cloud providers, if you wanted to configure a cloud federation environment:
+
+```
+
+$ docker swarm init --advertise-addr <public ip leader machine>
+
+```
+
+The system will return a command similar to this:
+
+```
+Swarm initialized: current node (2vfkvgecpiz4avley9v9lt6uz) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-5pumxo2o5n92ye41flboeklf2839dwhw1nfxf9w9m03hxh5tw6-5uhm6n3d9srxvcm0fit3l8pnd 142.93.251.234:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+
+```
+
+Run the command on hosts that will be part of the cluster:
+
+```
+docker swarm join --token SWMTKN-1-5pumxo2o5n92ye41flboeklf2839dwhw1nfxf9w9m03hxh5tw6-5uhm6n3d9srxvcm0fit3l8pnd 142.93.251.234:2377
+```
+
+To check the cluster nodes:
+
+```
+docker node ls
+```
