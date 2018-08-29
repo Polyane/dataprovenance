@@ -80,3 +80,18 @@ Creating the network:
 ```
 $ docker network create -d overlay overnet
 ```
+
+To check the created networks:
+
+```
+$ docker network ls
+
+NETWORK ID          NAME                DRIVER              SCOPE
+dc6015a29d5c        bridge              bridge              local
+c5dde55c0b87        docker_gwbridge     bridge              local
+e0316f1d3403        host                host                local
+ym9m98bws5mt        ingress             overlay             swarm
+cfb9796439fd        none                null                local
+rhkglqfk9yuf        overnet             overlay             swarm
+
+```
