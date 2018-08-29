@@ -59,13 +59,13 @@ To add a manager to this swarm, run 'docker swarm join-token manager' and follow
 Run the command on hosts that will be part of the cluster:
 
 ```
-docker swarm join --token SWMTKN-1-5pumxo2o5n92ye41flboeklf2839dwhw1nfxf9w9m03hxh5tw6-5uhm6n3d9srxvcm0fit3l8pnd 142.93.251.234:2377
+$ docker swarm join --token SWMTKN-1-5pumxo2o5n92ye41flboeklf2839dwhw1nfxf9w9m03hxh5tw6-5uhm6n3d9srxvcm0fit3l8pnd 142.93.251.234:2377
 ```
 
 To check the cluster nodes:
 
 ```
-docker node ls
+$ docker node ls
 ```
 
 The output of the command will display the nodes that make up the Docker Swarm cluster:
@@ -74,4 +74,9 @@ The output of the command will display the nodes that make up the Docker Swarm c
 ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
 2r425j1ldlurvhxz1fj28yvfe     polysrv1            Ready               Active                                  18.06.1-ce
 yume9g3s1rodzvvt1c2dri4q8 *   polysrv2            Ready               Active              Leader              18.06.1-ce
+```
+Creating the network:
+
+```
+$ docker network create -d overlay overnet
 ```
