@@ -67,3 +67,11 @@ To check the cluster nodes:
 ```
 docker node ls
 ```
+
+The output of the command will display the nodes that make up the Docker Swarm cluster:
+
+```
+ID                            HOSTNAME            STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+2r425j1ldlurvhxz1fj28yvfe     polysrv1            Ready               Active              Leader              18.06.1-ce
+yume9g3s1rodzvvt1c2dri4q8 *   polysrv2            Ready               Active                                  18.06.1-ce
+```
