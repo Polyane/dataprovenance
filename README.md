@@ -78,7 +78,7 @@ yume9g3s1rodzvvt1c2dri4q8 *   polysrv2            Ready               Active    
 Creating the network:
 
 ```
-$ docker network create -d overlay overnet
+$ docker network create -d overlay --attachable overnetwork 
 ```
 
 To check the created networks:
