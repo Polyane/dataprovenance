@@ -17,12 +17,12 @@ Start a container of the cassandra in both machines:
 Machine 1
 
 ```
-$ docker run --name cassandra -d -e CASSANDRA_BROADCAST_ADDRESS=<ip machine 1> -e CASSANDRA_CLUSTER_NAME=provbio -e CASSANDRA_SEEDS="<ip machine 1>, <ip machine 1>" -p 7000:7000 -v /opt/cassandra/data:/var/lib/cassandra cassandra:3.11.2
+$ docker run --name cassandra -d -e CASSANDRA_BROADCAST_ADDRESS=<ip machine 1> -e CASSANDRA_CLUSTER_NAME=provbio -e CASSANDRA_SEEDS="<ip machine 1>, <ip machine 2>" --network overnetwork -p 7000:7000 -v /opt/cassandra/data:/var/lib/cassandra cassandra:3.11.2
 ```
 Machine 2
 
 ```
-$ docker run --name cassandra -d -e CASSANDRA_BROADCAST_ADDRESS=<ip machine 2> -e CASSANDRA_CLUSTER_NAME=provbio -e CASSANDRA_SEEDS="<ip machine 1>, <ip machine 1>" -p 7000:7000 -v /opt/cassandra/data:/var/lib/cassandra cassandra:3.11.2
+$ docker run --name cassandra -d -e CASSANDRA_BROADCAST_ADDRESS=<ip machine 2> -e CASSANDRA_CLUSTER_NAME=provbio -e CASSANDRA_SEEDS="<ip machine 1>, <ip machine 2>" --network overnetwork -p 7000:7000 -v /opt/cassandra/data:/var/lib/cassandra cassandra:3.11.2
 ```
 
 Access the cassandra on any machine to create a keyspace and column family
