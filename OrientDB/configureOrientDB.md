@@ -8,7 +8,8 @@ $ mkdir /opt/orientdb/config
 Machine 1
 
 ```
-$ docker run -d --name orientdb -p 2424:2424 -p 2480:2480 -e ORIENTDB_ROOT_PASSWORD=entra123 -e ORIENTDB_NODE_NAME=node1 \
+$ docker run -d --name orientdb --net=overnetwork -p 2424:2424 -p 2480:2480 -e ORIENTDB_ROOT_PASSWORD=entra123 \
+-e ORIENTDB_NODE_NAME=node1 \
 -v /opt/orientdb/data:/orientdb/databases \
 -v /opt/orientdb/config:/orientdb/config orientdb
 ```
@@ -16,7 +17,12 @@ $ docker run -d --name orientdb -p 2424:2424 -p 2480:2480 -e ORIENTDB_ROOT_PASSW
 Machine 2
 
 ```
-$ docker run -d --name orientdb -p 2424:2424 -p 2480:2480 -e ORIENTDB_ROOT_PASSWORD=entra123 -e ORIENTDB_NODE_NAME=node2 \
+$ docker run -d --name orientdb --net=overnetwork -p 2424:2424 -p 2480:2480 -e ORIENTDB_ROOT_PASSWORD=entra123 \
+-e ORIENTDB_NODE_NAME=node2 \
 -v /opt/orientdb/data:/orientdb/databases \
 -v /opt/orientdb/config:/orientdb/config orientdb
+```
+
+```
+docker exec -it orientdb server.sh
 ```
